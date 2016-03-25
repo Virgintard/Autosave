@@ -1,0 +1,24 @@
+{
+  "name": "Autosave",
+  "version": "0.1",
+  "manifest_version" : 2,
+  "description": "Save links to your subreddit.",
+  "background" : {
+    "scripts" : ["background.js"]
+  },
+    "icons": { 
+                "16":"logo4.png", 
+                "48":"logo3.png", 
+                "128":"logo.png" 
+        }, 
+        "browser_action": { 
+            "default_icon": "logo1.png"
+        }, 
+  "permissions": ["activeTab"],
+    "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/submit*"],
+      "js": ["reddit.js"]
+    }
+  ]
+}
